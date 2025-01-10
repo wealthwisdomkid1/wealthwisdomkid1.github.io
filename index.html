@@ -1,0 +1,209 @@
+<html><head><base href="." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WealthWisdom - Digital Skills & Entertainment</title>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #ecf0f1;
+      --accent: #e74c3c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .block {
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      z-index: 1;
+    }
+
+    .content {
+      max-width: 1200px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+
+    .language-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.8rem; }
+      p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-switch">
+    <button onclick="toggleLanguage()">EN/ES</button>
+  </div>
+
+  <section class="block" style="background-image: url('https://i.ibb.co/2j17Rnk/DALL-E-2025-01-10-14-00-27-A-visually-captivating-finance-blog-header-image-in-landscape-orientation.webp')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 data-en="Unlock the World of Digital Entertainment and Skills"
+          data-es="Descubre el Mundo del Entretenimiento Digital y Habilidades">
+        Unlock the World of Digital Entertainment and Skills
+      </h1>
+      <p data-en="Learn, grow, and enjoy modern opportunities online."
+         data-es="Aprende, crece y disfruta de las oportunidades modernas en línea.">
+        Learn, grow, and enjoy modern opportunities online.
+      </p>
+      <a href="https://example.com/start" class="cta-button" 
+         data-en="Start Learning"
+         data-es="Empieza a Aprender">
+        Start Learning
+      </a>
+    </div>
+  </section>
+
+  <section class="block" style="background-image: url('https://i.ibb.co/dmPQn7q/DALL-E-2025-01-10-14-01-48-A-visually-striking-finance-themed-digital-artwork-designed-for-a-blog-he.webp')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2 data-en="Explore the Possibilities"
+          data-es="Explora las Posibilidades">
+        Explore the Possibilities
+      </h2>
+      <p data-en="Dive into a world of skill-based games where strategy meets entertainment. Connect with vibrant online communities and access cutting-edge educational platforms."
+         data-es="Sumérgete en un mundo de juegos basados en habilidades donde la estrategia se encuentra con el entretenimiento. Conéctate con comunidades en línea vibrantes y accede a plataformas educativas de vanguardia.">
+        Dive into a world of skill-based games where strategy meets entertainment. Connect with vibrant online communities and access cutting-edge educational platforms.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2 data-en="Navigate Risks and Rewards"
+          data-es="Navega por los Riesgos y Recompensas">
+        Navigate Risks and Rewards
+      </h2>
+      <p data-en="Understanding digital engagement requires careful consideration of risks and rewards. Learn to make informed decisions while exploring various online activities."
+         data-es="Comprender la participación digital requiere una consideración cuidadosa de los riesgos y recompensas. Aprende a tomar decisiones informadas mientras exploras varias actividades en línea.">
+        Understanding digital engagement requires careful consideration of risks and rewards. Learn to make informed decisions while exploring various online activities.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2 data-en="Discover Popular Mechanics"
+          data-es="Descubre Mecánicas Populares">
+        Discover Popular Mechanics
+      </h2>
+      <p data-en="Explore engaging mechanics like cascading symbols and fast-paced mini-games that make online gaming exciting and rewarding."
+         data-es="Explora mecánicas atractivas como símbolos en cascada y minijuegos rápidos que hacen que los juegos en línea sean emocionantes y gratificantes.">
+        Explore engaging mechanics like cascading symbols and fast-paced mini-games that make online gaming exciting and rewarding.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.content').forEach((el) => observer.observe(el));
+
+    // Language switching functionality
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body></html>
